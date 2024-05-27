@@ -2,8 +2,7 @@
 # Simple_Instruct_Pix2Pix
 Simple Instruct pix2pix is a simple neural network built upon instruct-pix2pix .with the objective
 of fine-tunning and inference for image-to-image model.
-
-## Pre-requsite 
+## Pre-requisite 
 Installing requirements.txt
 ```bash
 pip install -r requirements.txt
