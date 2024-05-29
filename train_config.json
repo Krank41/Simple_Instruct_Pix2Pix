@@ -1,5 +1,7 @@
 {
     "training_args": {
+      "num_validation_images":1,
+      "validation_epochs":1,
       "hub_token"  :"", 
       "checkpointing_steps": 500,
       "local_rank": -1,
@@ -15,7 +17,7 @@
       "random_flip": true,
       "train_batch_size": 1,
       "gradient_accumulation_steps": 1,
-      "max_train_steps": 15000,
+      "max_train_steps": 500,
       "checkpoints_total_limit": 1,
       "gradient_checkpointing": true,
       "learning_rate": 5e-05,

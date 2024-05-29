@@ -53,7 +53,6 @@ DATASET_NAME_MAPPING = {
 }
 WANDB_TABLE_COL_NAMES = ["original_image", "edited_image", "edit_prompt"]
 
-
 def parse_args():
     parser = argparse.ArgumentParser(
         description="Simple example of a fine-tuning script for InstructPix2Pix."
@@ -64,7 +63,8 @@ def parse_args():
     with open('train_config.json', 'r') as f:
         config = json.load(f)
 
-
+    args.num_validation_images = config["training_args"]["num_validation_images"]
+    args.validation_epochs = config["training_args"]["validation_epochs"]
     args.hub_token = config["training_args"]["hub_token"]
     args.checkpointing_steps = config["training_args"]["checkpointing_steps"]
     args.local_rank = config["training_args"]["local_rank"]
@@ -513,6 +513,7 @@ def main():
         }
 
     # DataLoaders creation:
+
     train_dataloader = torch.utils.data.DataLoader(
         train_dataset,
         shuffle=True,
